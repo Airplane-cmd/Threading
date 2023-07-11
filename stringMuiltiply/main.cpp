@@ -8,12 +8,12 @@ int main()
 {
 	srand(time(0));
         int c = 0;
-	int count = 4; 
+	int count = 100; 
 	const auto startTimePoint = std::chrono::high_resolution_clock::now();
 	std::vector<std::thread> threads;
         while(c < count)
         {
-                int b = 100;//rand() % 300;
+                int b = 300;//rand() % 300;
                 std::string first = "";
                 std::string second = "";
                 for(int i = 0; i < b; ++i)      first.push_back(char(rand() % 10 + 48));
@@ -31,8 +31,9 @@ int main()
 		try
 		{
 			std::cout << "creating a thread" << '\n';
-			std::thread thread(calculate, first, second);
-			threads.push_back(std::move(thread));
+			calculate(first, second);
+//			std::thread thread(calculate, first, second);
+//			threads.push_back(std::move(thread));
 			std::cout << "thread created" << '\n';
 //			th.join();
 		}
@@ -42,7 +43,7 @@ int main()
 		}
                 ++c;
         }
-	for(uint16_t i = 0; i < threads.size(); ++i)	threads[i].join();
+//	for(uint16_t i = 0; i < threads.size(); ++i)	threads[i].join();
 	const auto endTimePoint = std::chrono::high_resolution_clock::now();
 	const std::chrono::duration<double> elapsedTime = endTimePoint - startTimePoint;
 	std::cout << "took " << elapsedTime.count() << '\n';
