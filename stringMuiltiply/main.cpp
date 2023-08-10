@@ -8,7 +8,9 @@ int main()
 {
 	srand(time(0));
         int c = 0;
-	int count = 100; 
+	int count = 100;
+	int cores = 4;
+	int pendingTasks = count;
 	const auto startTimePoint = std::chrono::high_resolution_clock::now();
 	std::vector<std::thread> threads;
         while(c < count)
@@ -31,10 +33,22 @@ int main()
 		try
 		{
 			std::cout << "creating a thread" << '\n';
-			calculate(first, second);
-//			std::thread thread(calculate, first, second);
-//			threads.push_back(std::move(thread));
+//			calculate(first, second);
+			std::thread thread(calculate, first, second);
+			threads.push_back(std::move(thread));
+			pendingTasks -= 1;	
 			std::cout << "thread created" << '\n';
+			if(threads.size() == cores || pendingTasks == 0)
+			{
+				for(uint16_t i = 0; i < threads.size(); ++i)
+				{
+					threads[i].join();
+//					std::cout << "execution after join()\n";
+				}
+				threads.resize(0);
+			}
+			
+
 //			th.join();
 		}
 		catch(std::runtime_error &err)
@@ -43,7 +57,7 @@ int main()
 		}
                 ++c;
         }
-//	for(uint16_t i = 0; i < threads.size(); ++i)	threads[i].join();
+	for(uint16_t i = 0; i < threads.size(); ++i)	threads[i].join();
 	const auto endTimePoint = std::chrono::high_resolution_clock::now();
 	const std::chrono::duration<double> elapsedTime = endTimePoint - startTimePoint;
 	std::cout << "took " << elapsedTime.count() << '\n';
