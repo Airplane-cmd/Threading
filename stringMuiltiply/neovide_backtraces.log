@@ -1,0 +1,2232 @@
+2023-10-09 14:41:57 - Neovide panicked with the message 'Focus Lost Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 48)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:147:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:576:13
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:538:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:41:57 - Neovide panicked with the message 'Focus Gained Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 150, Column: 47)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:150:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:41:57 - Neovide panicked with the message 'Mouse Input Failed: NeovimError(Some(1), "invalid button or action")'. (File: src/bridge/ui_commands.rs; Line: 71, Column: 18)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::SerialCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:62:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:283:51
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:41:57 - Neovide panicked with the message 'Focus Lost Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 48)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:147:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:41:57 - Neovide panicked with the message 'Focus Gained Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 150, Column: 47)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:150:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:00 - Neovide panicked with the message 'Could not send serial ui command: SendError { .. }'. (File: src/bridge/ui_commands.rs; Line: 265, Column: 22)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:263:60
+   9: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  10: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  11: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  12: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  13: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  14: __rust_try
+  15: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  16: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  17: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  18: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  19: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  20: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  21: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  22: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  23: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:576:13
+  24: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  25: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  26: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  27: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  28: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  29: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  30: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  31: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  32: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  33: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  34: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  35: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  36: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  37: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  38: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  39: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  40: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  41: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  42: __rust_try
+  43: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  44: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  45: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  46: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  47: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  48: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  49: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  50: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  51: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  52: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  53: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  54: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  55: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  56: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  57: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  58: __rust_try
+  59: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  60: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  61: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  62: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  63: start_thread
+             at ./nptl/pthread_create.c:442:8
+  64: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:00 - Neovide panicked with the message 'called `Result::unwrap()` on an `Err` value: SendError { .. }'. (File: src/event_aggregator.rs; Line: 51, Column: 28)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::unwrap
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1076:23
+   8: neovide::event_aggregator::EventAggregator::send
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/event_aggregator.rs:51:9
+   9: neovide::window::mouse_manager::MouseManager::handle_pointer_motion
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mouse_manager.rs:189:17
+  10: neovide::window::mouse_manager::MouseManager::handle_event
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mouse_manager.rs:435:17
+  11: neovide::window::window_wrapper::WinitWindowWrapper::handle_event
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/window_wrapper.rs:226:9
+  12: neovide::window::update_loop::UpdateLoop::step
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/update_loop.rs:91:9
+  13: neovide::window::create_window::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mod.rs:148:25
+  14: winit::platform_impl::platform::x11::EventLoop<T>::drain_events::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:562:29
+  15: winit::platform_impl::platform::sticky_exit_callback
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/mod.rs:922:9
+  16: winit::platform_impl::platform::x11::EventLoop<T>::drain_events::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:554:17
+  17: winit::platform_impl::platform::x11::event_processor::EventProcessor<T>::process_event
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/event_processor.rs:716:29
+  18: winit::platform_impl::platform::x11::EventLoop<T>::drain_events
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:553:13
+  19: winit::platform_impl::platform::x11::EventLoop<T>::run_return::single_iteration
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:376:13
+  20: winit::platform_impl::platform::x11::EventLoop<T>::run_return
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:524:27
+  21: winit::platform_impl::platform::x11::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:539:25
+  22: winit::platform_impl::platform::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/mod.rs:830:56
+  23: winit::event_loop::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/event_loop.rs:308:9
+  24: neovide::window::create_window
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mod.rs:147:5
+  25: neovide::protected_main
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:179:5
+  26: neovide::main
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:79:5
+  27: core::ops::function::FnOnce::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  28: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  29: std::rt::lang_start::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:166:18
+  30: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:284:13
+      std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+      std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+      std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::rt::lang_start_internal::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:148:48
+      std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+      std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+      std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::rt::lang_start_internal
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:148:20
+  31: std::rt::lang_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:165:17
+  32: main
+  33: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  34: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:392:3
+  35: _start
+
+2023-10-09 14:42:23 - Neovide panicked with the message 'Focus Lost Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 48)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:147:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:23 - Neovide panicked with the message 'Focus Gained Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 150, Column: 47)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:150:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:47 - Neovide panicked with the message 'Focus Lost Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 48)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:147:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:49 - Neovide panicked with the message 'Mouse Input Failed: NeovimError(Some(1), "invalid button or action")'. (File: src/bridge/ui_commands.rs; Line: 71, Column: 18)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::SerialCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:62:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:283:51
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:49 - Neovide panicked with the message 'Focus Gained Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 150, Column: 47)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:150:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:49 - Neovide panicked with the message 'Focus Lost Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 147, Column: 48)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:147:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:49 - Neovide panicked with the message 'Focus Gained Failed: NeovimError(Some(0), "Invalid method: nvim_ui_set_focus")'. (File: src/bridge/ui_commands.rs; Line: 150, Column: 47)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::ParallelCommand::execute::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:150:17
+   9: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:269:68
+  10: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  11: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  12: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  13: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  14: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  15: __rust_try
+  16: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  17: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  18: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  19: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  20: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  21: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  22: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  23: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  24: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:639:17
+  25: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  26: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  27: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  28: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  29: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  30: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  31: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  32: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  33: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  34: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  35: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  36: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  37: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  38: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  39: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  40: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  41: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  42: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  43: __rust_try
+  44: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  45: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  46: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  47: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  48: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  49: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  50: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  51: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  52: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  53: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  54: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  55: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  56: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  57: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  58: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  59: __rust_try
+  60: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  61: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  62: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  63: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  64: start_thread
+             at ./nptl/pthread_create.c:442:8
+  65: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:50 - Neovide panicked with the message 'Could not send serial ui command: SendError { .. }'. (File: src/bridge/ui_commands.rs; Line: 265, Column: 22)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::expect
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1033:23
+   8: neovide::bridge::ui_commands::start_ui_command_handler::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/bridge/ui_commands.rs:263:60
+   9: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  10: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  11: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  12: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  13: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  14: __rust_try
+  15: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  16: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  17: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  18: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  19: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  20: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  21: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  22: tokio::runtime::task::LocalNotified<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:400:9
+  23: tokio::runtime::scheduler::multi_thread::worker::Context::run_task::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:576:13
+  24: tokio::runtime::coop::with_budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:107:5
+      tokio::runtime::coop::budget
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/coop.rs:73:5
+      tokio::runtime::scheduler::multi_thread::worker::Context::run_task
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:575:9
+  25: tokio::runtime::scheduler::multi_thread::worker::Context::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:526:24
+  26: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:491:21
+  27: tokio::runtime::context::scoped::Scoped<T>::set
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/scoped.rs:40:9
+  28: tokio::runtime::context::set_scheduler::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:26
+  29: std::thread::local::LocalKey<T>::try_with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:270:16
+  30: std::thread::local::LocalKey<T>::with
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/local.rs:246:9
+  31: tokio::runtime::context::set_scheduler
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context.rs:176:9
+  32: tokio::runtime::scheduler::multi_thread::worker::run::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:486:9
+  33: tokio::runtime::context::runtime::enter_runtime
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/context/runtime.rs:65:16
+  34: tokio::runtime::scheduler::multi_thread::worker::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:478:5
+  35: tokio::runtime::scheduler::multi_thread::worker::Launch::launch::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/scheduler/multi_thread/worker.rs:447:45
+  36: <tokio::runtime::blocking::task::BlockingTask<T> as core::future::future::Future>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/task.rs:42:21
+  37: tokio::runtime::task::core::Core<T,S>::poll::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:334:17
+  38: tokio::loom::std::unsafe_cell::UnsafeCell<T>::with_mut
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/loom/std/unsafe_cell.rs:16:9
+      tokio::runtime::task::core::Core<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/core.rs:323:13
+  39: tokio::runtime::task::harness::poll_future::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:485:19
+  40: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  41: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  42: __rust_try
+  43: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  44: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+  45: tokio::runtime::task::harness::poll_future
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:473:18
+  46: tokio::runtime::task::harness::Harness<T,S>::poll_inner
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:208:27
+  47: tokio::runtime::task::harness::Harness<T,S>::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/harness.rs:153:15
+  48: tokio::runtime::task::raw::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:276:5
+  49: tokio::runtime::task::raw::RawTask::poll
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/raw.rs:200:18
+  50: tokio::runtime::task::UnownedTask<S>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/task/mod.rs:437:9
+  51: tokio::runtime::blocking::pool::Task::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:159:9
+  52: tokio::runtime::blocking::pool::Inner::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:513:17
+  53: tokio::runtime::blocking::pool::Spawner::spawn_thread::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/tokio-1.32.0/src/runtime/blocking/pool.rs:471:13
+  54: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  55: std::thread::Builder::spawn_unchecked_::{{closure}}::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:529:17
+  56: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panic/unwind_safe.rs:271:9
+  57: std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+  58: __rust_try
+  59: std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+  60: std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::thread::Builder::spawn_unchecked_::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/thread/mod.rs:528:30
+  61: core::ops::function::FnOnce::call_once{{vtable.shim}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  62: <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1985:9
+      std::sys::unix::thread::Thread::new::thread_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys/unix/thread.rs:108:17
+  63: start_thread
+             at ./nptl/pthread_create.c:442:8
+  64: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+2023-10-09 14:42:51 - Neovide panicked with the message 'called `Result::unwrap()` on an `Err` value: SendError { .. }'. (File: src/event_aggregator.rs; Line: 51, Column: 28)
+   0: neovide::main::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:71:25
+   1: <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/alloc/src/boxed.rs:1999:9
+      std::panicking::rust_panic_with_hook
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:709:13
+   2: std::panicking::begin_panic_handler::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:597:13
+   3: std::sys_common::backtrace::__rust_end_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:151:18
+   4: rust_begin_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:593:5
+   5: core::panicking::panic_fmt
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/panicking.rs:67:14
+   6: core::result::unwrap_failed
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1651:5
+   7: core::result::Result<T,E>::unwrap
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/result.rs:1076:23
+   8: neovide::event_aggregator::EventAggregator::send
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/event_aggregator.rs:51:9
+   9: neovide::window::keyboard_manager::KeyboardManager::handle_event
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/keyboard_manager.rs:46:25
+  10: neovide::window::window_wrapper::WinitWindowWrapper::handle_event
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/window_wrapper.rs:225:9
+  11: neovide::window::update_loop::UpdateLoop::step
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/update_loop.rs:91:9
+  12: neovide::window::create_window::{{closure}}
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mod.rs:148:25
+  13: winit::platform_impl::platform::x11::EventLoop<T>::drain_events::{{closure}}::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:562:29
+  14: winit::platform_impl::platform::sticky_exit_callback
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/mod.rs:922:9
+  15: winit::platform_impl::platform::x11::EventLoop<T>::drain_events::{{closure}}
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:554:17
+  16: winit::platform_impl::platform::x11::event_processor::EventProcessor<T>::process_event
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/event_processor.rs:563:21
+  17: winit::platform_impl::platform::x11::EventLoop<T>::drain_events
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:553:13
+  18: winit::platform_impl::platform::x11::EventLoop<T>::run_return::single_iteration
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:376:13
+  19: winit::platform_impl::platform::x11::EventLoop<T>::run_return
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:524:27
+  20: winit::platform_impl::platform::x11::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/x11/mod.rs:539:25
+  21: winit::platform_impl::platform::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/platform_impl/linux/mod.rs:830:56
+  22: winit::event_loop::EventLoop<T>::run
+             at /home/bthd/.cargo/registry/src/index.crates.io-6f17d22bba15001f/winit-0.29.0-beta.0/src/event_loop.rs:308:9
+  23: neovide::window::create_window
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/window/mod.rs:147:5
+  24: neovide::protected_main
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:179:5
+  25: neovide::main
+             at /home/bthd/someCoolBinaries/neovideSrc/neovide/src/main.rs:79:5
+  26: core::ops::function::FnOnce::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:250:5
+  27: std::sys_common::backtrace::__rust_begin_short_backtrace
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/sys_common/backtrace.rs:135:18
+  28: std::rt::lang_start::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:166:18
+  29: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/core/src/ops/function.rs:284:13
+      std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+      std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+      std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::rt::lang_start_internal::{{closure}}
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:148:48
+      std::panicking::try::do_call
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:500:40
+      std::panicking::try
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panicking.rs:464:19
+      std::panic::catch_unwind
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/panic.rs:142:14
+      std::rt::lang_start_internal
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:148:20
+  30: std::rt::lang_start
+             at /rustc/eb26296b556cef10fb713a38f3d16b9886080f26/library/std/src/rt.rs:165:17
+  31: main
+  32: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  33: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:392:3
+  34: _start
+
